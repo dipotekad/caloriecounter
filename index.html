@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Планировщик питания с ИМТ и авторизацией</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="auth-container" class="container">
+    <h2>Авторизация</h2>
+    <div id="auth-forms">
+      <form id="login-form" class="auth-form active">
+        <h3>Вход</h3>
+        <input type="text" id="login-username" placeholder="Логин" required />
+        <input type="password" id="login-password" placeholder="Пароль" required />
+        <button type="submit">Войти</button>
+        <p>Нет аккаунта? <span id="show-register">Зарегистрироваться</span></p>
+        <div class="error" id="login-error"></div>
+      </form>
+
+      <form id="register-form" class="auth-form">
+        <h3>Регистрация</h3>
+        <input type="text" id="register-username" placeholder="Логин" required />
+        <input type="password" id="register-password" placeholder="Пароль" required />
+        <input type="password" id="register-password-confirm" placeholder="Подтвердите пароль" required />
+        <button type="submit">Зарегистрироваться</button>
+        <p>Уже есть аккаунт? <span id="show-login">Войти</span></p>
+        <div class="error" id="register-error"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="app-container" class="container hidden">
+    <header>
+      <h1>Планировщик питания</h1>
+      <div>
+        <span id="user-greeting"></span>
+        <button id="logout-btn">Выйти</button>
+      </div>
+    </header>
+
+    <section id="calculator">
+      <label for="weight">Вес (кг):</label>
+      <input type="number" id="weight" placeholder="Введите вес" min="20" max="300" required />
+      
+      <label for="height">Рост (см):</label>
+      <input type="number" id="height" placeholder="Введите рост" min="100" max="250" required />
+      
+      <button id="calculate-btn">Рассчитать ИМТ и подобрать блюда</button>
+      
+      <div id="result"></div>
+      <div id="meals"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
